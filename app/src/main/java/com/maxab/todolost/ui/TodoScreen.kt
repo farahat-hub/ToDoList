@@ -103,7 +103,7 @@ private fun TaskItem(
         Checkbox(checked = task.isDone, onCheckedChange = { onToggleDone() })
 
         Text(
-            text = task.name,
+            text = task.id.toString(),
             modifier = Modifier.weight(1f),
             textDecoration = if (task.isDone) TextDecoration.LineThrough else TextDecoration.None
         )
@@ -123,6 +123,7 @@ private fun TaskItem(
 @Composable
 private fun TodoScreenPreview() {
     ToDoLostTheme {
-        TodoScreen(viewModel = TaskViewModel())
+        val viewmodel= TaskViewModel()
+        TodoScreen(viewModel = viewmodel)
     }
 }
